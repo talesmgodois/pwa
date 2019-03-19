@@ -6,7 +6,7 @@ import {
     OnInit} from '@angular/core';
   import { MediaMatcher } from '@angular/cdk/layout';
   import { MatSidenav, MatSnackBar } from '@angular/material';
-  import { IosInstallComponent } from './io-install/ios-install.component';
+  import { IosInstallComponent } from './ios-install/ios-install.component';
   
   @Component({
     selector: 'app-root',
