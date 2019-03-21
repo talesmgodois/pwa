@@ -6,7 +6,8 @@ import {
     OnInit} from '@angular/core';
   import { MediaMatcher } from '@angular/cdk/layout';
   import { MatSidenav, MatSnackBar } from '@angular/material';
-  import { IosInstallComponent } from './ios-install/ios-install.component';
+  import { IosInstallComponent } from './components/ios-install/ios-install.component';
+import { ApiService } from './services/api.service';
   
   @Component({
     selector: 'app-root',
@@ -30,7 +31,7 @@ import {
     private _mobileQueryListener: () => void;
     @Output() toggleSideNav = new EventEmitter();
     
-    constructor( changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private toast: MatSnackBar ) {
+    constructor( changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private toast: MatSnackBar, private apiService:ApiService ) {
       this.mobileQuery = media.matchMedia('(max-width: 600px)');
       this._mobileQueryListener = () => changeDetectorRef.detectChanges();
       this.mobileQuery.addListener(this._mobileQueryListener);
